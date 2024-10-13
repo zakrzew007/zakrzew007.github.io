@@ -1,0 +1,6 @@
+{
+    "timeline.pageOnScroll": true,
+    "git.timeline.showAuthor": false,
+    "terminal.integrated.allowMnemonics": false,
+    "workbench.layoutControl.type": "menu"
+}

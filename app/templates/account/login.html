@@ -1,0 +1,38 @@
+
+<!-- app/templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/login.css">
+    <script>
+        function reg(){
+            window.location.href = "{{ url_for('login.register') }}";
+        }
+    </script>
+</head>
+<body>
+    <h1>Login</h1>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>  <!-- Display the error message in red -->
+    {% endif %}
+    <form method="POST" action="{{ url_for('login.login_view') }}">
+        <p>
+            <label for="username">Username</label><br>
+            <input type="text" name="username" id="username" >
+        </p>
+        <p>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password" >
+        </p>
+        <p>
+            <input type="submit" value="Login" class="styled-input">
+        </p>
+        <p>
+            <input type="button" onclick="reg()" class="styled-input" value="Register">
+        </p>
+    </form>
+</body>
+</html>

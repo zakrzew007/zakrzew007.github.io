@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main mainPage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainPage.css') }}">
+</head>
+<body class="dark-mode">
+    <div class="navbar">
+        {% include 'global/navbar.html' %}
+    </div>
+    <br>
+    <div class="recipe-container">
+        {% for recipe in recipes %}
+        <div class="recipe">
+            <a href="{{ url_for('recipes.recipe', recipe_id=recipe.id) }}">
+                <img src="{{ url_for('static', filename=recipe.image_url) }}" alt="{{ recipe.recipe }}">
+                <h3>{{ recipe.recipe }}</h3>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: JetBrains Mono, sans-serif;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.left-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.profile-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-card img.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.other-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.right-section {
+    flex: 2;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-item:last-child {
+    border-bottom: none;
+}
+
+.recipe-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.recipe-content {
+    display: flex;
+    align-items: center;
+}
+
+.recipe-image {
+    height: 150px;
+    width: 250px;
+    border-radius: 10px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.recipe-details {
+    flex: 1;
+}
+
+.recipe-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.tag-vegan {
+    background-color: #a8e6cf;
+    color: #2e7d32;
+}
+
+.tag-gluten-free {
+    background-color: #ffd3b6;
+    color: #d84315;
+}
+
+.tag-dairy-free {
+    background-color: #ff8b94;
+    color: #c62828;
+}
+
+.tag-low-carb {
+    background-color: #dcedc1;
+    color: #558b2f;
+}
+
+.tag-paleo {
+    background-color: #ffcc80;
+    color: #ef6c00;
+}
+
+.tag-keto {
+    background-color: #b3e5fc;
+    color: #0277bd;
+}
+
+* {
+    text-decoration: none;
+    font-family: JetBrains Mono;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/login.css">
+    <script>
+        function loginred(){
+            window.location.href = "{{ url_for('login.login_view') }}";
+        }
+
+        function validatePassword() {
+            const password1 = document.getElementById('password1');
+            const password2 = document.getElementById('password2');
+            const message = document.getElementById('message');
+
+            if (password1.value !== password2.value) {
+                message.innerHTML = 'Passwords do not match';
+                return false;
+            } else {
+                message.innerHTML = '';
+                return true;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const password1 = document.getElementById('password1');
+            const password2 = document.getElementById('password2');
+
+            password1.oninput = validatePassword;
+            password2.oninput = validatePassword;
+
+            const form = document.querySelector('form');
+            form.onsubmit = function(event) {
+                if (!validatePassword()) {
+                    event.preventDefault();
+                }
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>Register</h1>
+    
+    {% if error %}
+        <p class="error">{{ error }}</p>  <!-- Display the error message with the dark theme styling -->
+    {% endif %}
+    
+    <form method="POST" action="{{ url_for('login.register') }}">
+        <p>
+            <label for="username">Username</label><br>
+            <input type="text" name="username" id="username" required>
+        </p>
+        <p>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password1" required>
+        </p>
+        <p id="message"></p>
+        <p>
+            <label for="password">Confirm Password</label><br>
+            <input type="password" name="password" id="password2" required>
+        </p>
+        
+        <p>
+            <input type="submit" class="styled-input" value="Register">
+        </p>
+        <p>
+            <input type="button" onclick="loginred()" class="styled-input" value="Login">
+        </p>
+    </form>
+</body>
+</html>

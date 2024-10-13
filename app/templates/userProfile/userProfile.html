@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='userProfile.css') }}">
+</head>
+<body class="light-mode">
+    <div class="navbar" id="navbar">
+        {% include 'global/navbar.html' %}
+    </div>
+
+    <div class="content-container">
+        <div class="left-section">
+            <div class="profile-card">
+                <img src="{{ url_for('static', filename='profileImages/' + profileImage) }}" 
+                    id="profileImage" 
+                    alt="User Profile Picture" 
+                    class="profile-picture"
+                    onclick="document.getElementById('fileInput').click();">
+                <h3>{{ user.name }}</h3>
+                <p>Email: {{ user.email }}</p>
+                <p>Joined: {{ user.joined_date }}</p>
+                <p>About me: {{ user.bio }}</p>
+            </div>
+            <div class="other-info">
+                <h4>Other Information</h4>
+                <p>Additional details here...</p>
+            </div>
+        </div>
+        
+        <div class="right-section">
+            {% for item in recipes %}
+            <div class="recipe-item">
+                <a href="{{ url_for('recipes.recipe', recipe_id=item.recipe.id) }}" class="recipe-link">
+                    <div class="recipe-content">
+                        <img src="{{ url_for('static', filename=item.recipe.image_url) }}" alt="{{ item.recipe.recipe }}" class="recipe-image">
+                        <div class="recipe-details">
+                            <h3>{{ item.recipe.recipe }}</h3>
+                            <div class="recipe-tags">
+                                {% for tag in item.tags %}
+                                    <div class="tag tag-{{ tag|lower|replace(' ', '-') }}">{{ tag }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Upload Form -->
+        <form action="{{ url_for('userProfile.upload') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
+            <input type="hidden" name="username" value="{{ user.username }}">
+            <input type="file" id="fileInput" name="image" style="display: none;" onchange="document.getElementById('uploadButton').click();">
+            <button type="submit" id="uploadButton" style="display: none;">Upload</button>
+        </form>
+        
+        <script src="{{ url_for('static', filename='js/profileImage.js') }}" defer></script>
+    </div>
+</body>
+</html>

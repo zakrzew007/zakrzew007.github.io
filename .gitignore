@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+
+migrations/
+# Python compiled files
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+
+# MacOS system files
+.DS_Store
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+.mako

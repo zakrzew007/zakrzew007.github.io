@@ -1,0 +1,6 @@
+.recipe img {
+    width: 500px;  /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    object-fit: cover;  /* Ensures the image maintains its aspect ratio while filling the box */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}

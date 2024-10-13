@@ -1,0 +1,77 @@
+/* Navigation Bar Styles */
+.navbar {
+    width: 100%;
+    background-color: #363535;
+    margin: 0;
+    height: 80px;
+    display: flex;
+    justify-content: center; /* Center the navbar items */
+    align-items: center;
+    position: sticky; /* Sticky navbar */
+    top: 0; /* Stick to the top when scrolling */
+    z-index: 1000; /* Ensures the navbar stays above content once stuck */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
+
+/* Navbar Links */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    font-family: JetBrains Mono;
+    font-weight: bold;
+    text-shadow: #363535 1px 1px 2px; /* Slight shadow for better visibility */
+    text-align: center;
+    transition: color 0.2s ease, transform 0.3s ease; /* Smooth color and scale transition */
+}
+
+/* Last navbar item without margin */
+.navbar a:last-child {
+    margin-right: 0;
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+    color: #5b88bd;
+    transform: scale(1.1); /* Slight scale up when hovering */
+}
+
+/* Optional: Animated underline effect for hover */
+.navbar a {
+    position: relative; /* Required for pseudo-element positioning */
+    overflow: hidden; /* Ensures pseudo-element stays within bounds */
+}
+
+/* Underline effect */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background: #5b88bd; /* Color of the underline */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease;
+    transform-origin: bottom right; /* Start the effect from right to left */
+}
+
+/* Hover underline animation */
+.navbar a:hover::before {
+    transform: scaleX(1); /* Full width underline on hover */
+    transform-origin: bottom left; /* Animate from left to right */
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Content Styling */
+.content {
+    padding: 20px; /* Adjust padding for content */
+}

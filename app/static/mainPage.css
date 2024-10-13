@@ -1,0 +1,56 @@
+body.light-mode {
+    background-color: #ffffff;  /* Light background */
+    color: #000000;             /* Dark text */
+    font-family: JetBrains Mono;
+    margin: 0;
+}
+
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%; /* Change from 50% to 100% */
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.recipe {
+    flex: 0 0 29%; /* Change from 30% to 23% */
+    background-color: #f9f9f9;  /* Light background for recipe cards */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    margin-bottom: 20px;
+    height: 200px;
+}
+
+.recipe img {
+    width: 100%;                 /* Image will fill the width of the card */
+    height: auto;                /* Keep the aspect ratio of the image */
+    object-fit: cover;           /* Maintain aspect ratio and cover the area */
+    border-radius: 8px;          /* Rounded image corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow for image */
+    height: 160px;
+}
+
+.recipe h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333333;              /* Dark text color for the title */
+}
+
+.recipe:hover {
+    background-color: #e0e0e0;    /* Slightly darker on hover */
+    transform: scale(1.05);       /* Small zoom effect */
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+* {
+    text-decoration: none;
+    font-family: JetBrains Mono;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/recipe.css') }}"> <!-- Adjust path as needed -->
+</head>
+<body>
+    {%include('global/navbar.html')%}  
+    <div class="space"></div>
+    <div class="container">
+        <div class="upperSection">
+            <div class="image" style="background-image: url('{{ recipe.image_url }}');"></div>
+            <div class="titleTags">
+                <div class="title">{{recipe.recipe}}</div>
+               
+                <div class="tags">
+                    {% for tag in tags %}
+                        <div class="tag tag-{{ tag|lower|replace(' ', '-') }}">{{ tag }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+        <div class="lowerSection">
+            <div class="instructions">
+                <h2>Instructions</h2>
+                <p>{{ recipe.instructions }}</p>
+            </div>
+            <div class="ingredients">
+                <h2>Ingredients</h2>
+                <ul>
+                    {% for ingredient in recipe.ingredients.split(', ') %}
+                    
+                        <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            </div> 
+    </div>
+</body>
+</html>
+
